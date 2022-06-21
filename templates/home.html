@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Uploader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+  	<div class="conatiner text-center mt-3">
+	    <h1>Image Uploader</h1>
+
+	    <form method="POST" enctype="multipart/form-data">
+	    	{% csrf_token %}
+	    	<input type="file" name='photo'>
+	    	<button type="submit" class="btn btn-primary">Upload</button>
+	    </form>
+    </div>
+<hr>
+    <div class="container">
+    	{% if pic %}
+	    	<div class="row">
+	    		{% for x in pic %}
+	    		<div class="col-md-4">
+		    		<form action="/delete/{{x.id}}/" method="POST">
+			    		{% csrf_token %}
+			    		<img src="{{x.image.url}}" class="img-thumbnail">
+			    		<div class="d-grid mt-2">
+							<button class="btn btn-outline-danger">Delete</button>
+						</div>
+		    		</form>
+		    	</div>
+	    		{% endfor %}
+	    	</div>
+	    {% else %}
+	    	<h2 class="text-center">No Images Uploaded</h2>
+	    {% endif %}
+
+    	
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
