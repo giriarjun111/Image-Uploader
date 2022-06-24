@@ -1,5 +1,6 @@
 
 # Image Uploader In Django
+In this project we will host our media files on Cloudinary server and deploy application on Heroku
 
 # Project Live @https://dj-upload.herokuapp.com/
 
@@ -58,6 +59,9 @@ Start by either Downloading Zip file or Clone the repo
 
 **Server:** Django
 
+## Screenshots
+Home Page
+![Home Page](static/images/home.png "Home Page")
 
 
 
