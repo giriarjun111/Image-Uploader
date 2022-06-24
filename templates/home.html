@@ -14,7 +14,7 @@
 
   </head>
   <body>
-  	<div class="conatiner text-center mt-3">
+  	<div class="container text-center mt-3">
 	    <h1>Image Uploader</h1>
 
 	    <form method="POST" enctype="multipart/form-data">
@@ -27,7 +27,7 @@
     <div class="container">
 	    	<div class="row">
 	    		{% for x in pic %}
-	    		<div class="col-md-4">
+	    		<div class="col-md-4 mb-3">
 		    		<form action="/delete/{{x.id}}/" method="POST">
 			    		{% csrf_token %}
 			    		<img src="{{x.image.url}}" class="img-thumbnail">
