@@ -30,7 +30,7 @@ Start by either Downloading Zip file or Clone the repo
 
 ```bash
   Rename .env.example to .env and Add the values for the follwing or copy this:
-    SECRET_KEY=a0kqo78v_8bv=5jkqbtgt$w3(h7xe&(bspu*6s+429=rh+2xd!
+    SECRET_KEY=
     DEBUG=True
 
     CLOUD_NAME = Cloudinary Cloud Name
